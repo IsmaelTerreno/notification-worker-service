@@ -1,9 +1,13 @@
-# Coding Task: Create a Stellar Notification System for Decaf Wallet
+Notification worker service - Microservice
+===========================
+Responsible to listen new notifications sent by the [Notification ETL service microservice](https://github.com/IsmaelTerreno/notification-etl-service) through RabbitMQ and send them to the Decaf API notification service. This implementation is based on the coding task mentioned down below.
+
+## Coding Task: Create a Stellar Notification System for Decaf Wallet
 
 Objective: Develop a microservice-based notification system that monitors Stellar transactions and notifies Decaf users
 of relevant activities.
 
-## Context:
+### Context:
 
 Right now in the Decaf wallet, when you receive a Solana transaction you will be notified. But on stellar we are yet to
 have this, due to the unavailability of third party indexing and webhook services. We need your help!
