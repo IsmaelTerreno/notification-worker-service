@@ -2,6 +2,15 @@ Notification worker service - Microservice
 ===========================
 Responsible to listen new notifications sent by the [Notification ETL service microservice](https://github.com/IsmaelTerreno/notification-etl-service) through RabbitMQ and send them to the Decaf API notification service. This implementation is based on the coding task mentioned down below.
 
+## Planned Architecture:
+
+![planned-architecture.png](planned-architecture.png)
+
+Navigate through the [following public link to access the planned architecture](https://s.icepanel.io/uYg8sIP5nHttWN/9CSh) for
+the Stellar Notification microservice system.
+
+This implementation is based on the coding task mentioned down below.
+
 ## Coding Task: Create a Stellar Notification System for Decaf Wallet
 
 Objective: Develop a microservice-based notification system that monitors Stellar transactions and notifies Decaf users
@@ -161,10 +170,3 @@ welcome. Your code will actually be implemented if we love it!
 - Quality of documentation and comments
 - Test coverage and quality
 - Creativity on design and scalability/iterability on future ideas
-
-Planned Architecture:
-
-![planned-architecture.png](planned-architecture.png)
-
-Navigate through the [following link to access the planned architecture](https://s.icepanel.io/uYg8sIP5nHttWN/9CSh) for
-the Stellar Notification microservice system.
