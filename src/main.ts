@@ -3,6 +3,7 @@ import { AppModule } from './app/app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Transport } from '@nestjs/microservices';
 import { ValidationPipe } from '@nestjs/common';
+import process from 'node:process';
 
 /**
  * Gets the cors origin to respect the expressjs cors which is behind scenes in NestJs
@@ -38,7 +39,7 @@ async function bootstrap() {
     transport: Transport.RMQ,
     options: {
       urls: [process.env.RABBITMQ_CONNECTION_URL],
-      queue: 'invoice-status-on-related-plans',
+      queue: process.env.RABBITMQ_QUEUE_NAME,
       prefetchCount: 20,
       isGlobalPrefetchCount: true,
       queueOptions: {
