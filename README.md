@@ -2,6 +2,22 @@ Notification worker service - Microservice
 ===========================
 Responsible to listen new notifications sent by the [Notification ETL service microservice](https://github.com/IsmaelTerreno/notification-etl-service) through RabbitMQ and send them to the Decaf API notification service.
 
+## How to run the project with Docker
+
+### Prerequisites
+
+- Docker
+
+### Requirements
+
+#### 1) Run the following command to start the project and download image dependencies with docker-compose:
+
+To start the microservice Docker services, run the following command:
+
+```bash
+cd docker && docker-compose -f docker-compose-microservice.yml up -d
+```
+
 ## Planned Architecture:
 
 ![planned-architecture.png](planned-architecture.png)
