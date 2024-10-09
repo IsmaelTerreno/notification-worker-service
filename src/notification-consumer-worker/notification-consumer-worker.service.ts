@@ -26,9 +26,6 @@ export class NotificationConsumerWorkerService {
     eventMessage: EventNotificationMessageDto,
   ): Promise<void> {
     // Send the notification to the Decaf API
-    //const response =
     await this.decafApiService.sendNotification(eventMessage);
-    // Log the response from the Decaf API
-    // this.logger.log('🚀 Response from Decaf API:', response);
   }
 }
