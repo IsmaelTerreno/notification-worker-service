@@ -24,6 +24,12 @@ To start the microservice Docker services, run the following command:
 cd docker && docker-compose -f docker-compose-microservice.yml up -d
 ```
 
+#### 2) Wait for approximately 10-20 seconds for the services to start, then you will be able to access the following local services:
+
+#### Microservice core service:
+
+- [Notification Worker Service](http://localhost:3098/health)
+
 ## Planned Architecture:
 
 ![planned-architecture.png](planned-architecture.png)
