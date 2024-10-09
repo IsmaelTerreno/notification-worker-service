@@ -12,8 +12,6 @@ services:
     restart: always
     ports:
       - '3098:3098' # Port to access the notification worker API
-    volumes:
-      - ./notification-worker-service-data:/notification-worker-service
     networks:
       - notification-api-network
 networks:
