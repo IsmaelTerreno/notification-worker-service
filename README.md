@@ -2,6 +2,12 @@ Notification worker service - Microservice
 ===========================
 Responsible to listen new notifications sent by the [Notification ETL service microservice](https://github.com/IsmaelTerreno/notification-etl-service) through RabbitMQ and send them to the Decaf API notification service.
 
+# Tutorial videos for the project:
+
+- [Part 1 - Microservice Design Explanation 🎥 ](https://www.loom.com/share/2cc4d31f67934be1bd0268d18885249d?sid=7890692c-2001-4642-afa3-4dc6f732aab1)
+- [Part 2 - How to run the Microservices with Docker 🎥 ](https://www.loom.com/share/2cc4d31f67934be1bd0268d18885249d?sid=7890692c-2001-4642-afa3-4dc6f732aab1)
+- [Part 3 - How to test the Microservices and use the monitoring tools 🎥 ](https://www.loom.com/share/2cc4d31f67934be1bd0268d18885249d?sid=7890692c-2001-4642-afa3-4dc6f732aab1)
+
 ## How to run the project with Docker
 
 ### Prerequisites
