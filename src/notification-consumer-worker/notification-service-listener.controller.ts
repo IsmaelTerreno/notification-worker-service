@@ -13,7 +13,7 @@ export class NotificationServiceListenerController {
   ) {}
 
   @EventPattern('notification-to-send')
-  processNotificationsToSend(
+  async processNotificationsToSend(
     @Payload() eventMessage: EventNotificationMessageDto,
     @Ctx() context: RmqContext,
   ) {
@@ -22,7 +22,7 @@ export class NotificationServiceListenerController {
       this.logger.log(
         `⚡ Event received. EventPattern: ${context.getPattern()} - ${JSON.stringify(eventMessage, null, 2)}`,
       );
-      // this.consumerWorkerService.processNotificationsToSend(eventMessage);
+      await this.consumerWorkerService.processNotificationsToSend(eventMessage);
     } catch (error) {
       this.logger.error(
         `❌ Failed processing event - Details: ${error.message}`,

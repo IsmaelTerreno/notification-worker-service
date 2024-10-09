@@ -17,26 +17,19 @@ export class DecafApiService {
    * @param {Function} callbackFn - The callback function to handle the API response.
    * @return {void} This method does not return a value directly; any response or error is handled via the callback function and logging.
    */
-  sendNotification(notification, callbackFn) {
+  async sendNotification(notification) {
     this.logger.log('🛰 Sending notification to Decaf API...');
-    this.httpService
-      .post(this.baseUrlDecaf + this.sendNotificationEndpoint, notification, {
+    // Return the HTTP POST repose form the Decaf API
+    return this.httpService.axiosRef.post(
+      this.baseUrlDecaf + this.sendNotificationEndpoint,
+      notification,
+      {
         responseType: 'json',
         headers: {
           Accept: 'application/json',
           Authorization: `${process.env.DECAF_API_KEY}`,
         },
-      })
-      .subscribe({
-        next: (response) => {
-          callbackFn(response);
-        },
-        error: (error) => {
-          this.logger.error(
-            `❌ Failed sending notification to Decaf API - Details: ${error.message}`,
-          );
-          return error.message;
-        },
-      });
+      },
+    );
   }
 }
