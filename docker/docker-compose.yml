@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  # Service to run the notification worker service to read messages from the RabbitMQ queue and push them to the Decaf API notification service
+  notification-worker-service:
+    image: notification-worker-service:latest
+    container_name: notification-worker-service
+    env_file:
+      - docker.env
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    restart: always
+    ports:
+      - '3098:3098' # Port to access the notification worker API
+    volumes:
+      - ./notification-worker-service-data:/notification-worker-service
+    networks:
+      - notification-api-network
+networks:
+  notification-api-network:

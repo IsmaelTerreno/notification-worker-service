@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { ScheduleModule } from '@nestjs/schedule';
 import { NotificationServiceListenerController } from './notification-service-listener.controller';
 import { NotificationConsumerWorkerService } from './notification-consumer-worker.service';
 import { DecafApiModule } from '../decaf-api/decaf-api.module';
@@ -20,7 +19,7 @@ import { DecafApiModule } from '../decaf-api/decaf-api.module';
  * - NotificationConsumerWorkerService: Performs the core processing of notifications.
  */
 @Module({
-  imports: [DecafApiModule, ScheduleModule.forRoot()],
+  imports: [DecafApiModule],
   controllers: [NotificationServiceListenerController],
   providers: [NotificationConsumerWorkerService],
 })
