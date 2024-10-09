@@ -17,10 +17,16 @@ export class NotificationServiceListenerController {
     @Payload() eventMessage: EventNotificationMessageDto,
     @Ctx() context: RmqContext,
   ) {
-    // Log the event received
-    this.logger.log(
-      `⚡ Event received. EventPattern: ${context.getPattern()} - ${JSON.stringify(eventMessage)}`,
-    );
-    return this.consumerWorkerService.processNotificationsToSend();
+    try {
+      // Log the event received using the custom replacer function
+      this.logger.log(
+        `⚡ Event received. EventPattern: ${context.getPattern()} - ${JSON.stringify(eventMessage, null, 2)}`,
+      );
+      // this.consumerWorkerService.processNotificationsToSend(eventMessage);
+    } catch (error) {
+      this.logger.error(
+        `❌ Failed processing event - Details: ${error.message}`,
+      );
+    }
   }
 }
