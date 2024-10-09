@@ -3,7 +3,7 @@ import { AppModule } from './app/app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Transport } from '@nestjs/microservices';
 import { ValidationPipe } from '@nestjs/common';
-import process from 'node:process';
+import * as process from 'process';
 
 /**
  * Gets the cors origin to respect the expressjs cors which is behind scenes in NestJs
